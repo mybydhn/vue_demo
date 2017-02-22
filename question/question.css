@@ -1,0 +1,226 @@
+@charset "utf-8";
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{
+    margin:0;
+    padding:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+caption,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{
+  border:0;
+}
+textarea{
+    margin:0;
+    padding:0;
+    outline: none;
+}
+input{
+    margin: 0;padding:0;outline: none;
+}
+/** 设置默认字体 **/
+body,
+button, input, select, textarea {
+  font: 14px '微软雅黑';
+}
+html {
+    min-height: 100%;
+    background-color: #f3faff;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+.qa-wrap {
+    padding: 20px;
+    font: 14px "微软雅黑";
+}
+
+.each-question {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e9ff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 13px 9px;
+}
+
+.question-righttips {
+    position: absolute;
+    top: -1px;
+    right: 17px;
+    width: 32px;
+    height: 31px;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #fbbc5f;
+}
+
+.question-righttips:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 7px solid rgba(255, 255, 255, 0);
+    border-bottom: 7px solid rgba(255, 255, 255, 1);
+    border-left: 16px solid rgba(255, 255, 255, 0);
+    border-right: 16px solid rgba(255, 255, 255, 0);
+}
+
+.each-question h4 {
+    font: bold 16px "微软雅黑";
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.each-question li {
+    list-style: none;
+}
+
+.single-items li,
+.mutli-items li {
+    margin-bottom: 12px;
+}
+
+.judgeitems {
+    text-align: center;
+}
+
+.judgeitems .check-label i {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+}
+
+.option {
+    display: none
+}
+
+.check-label i {
+    display: inline-block;
+    font: 16px "微软雅黑";
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border-radius: 100%;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #e2e9ff;
+    color: #4c8be8;
+    text-align: center;
+    margin-right: 8px;
+}
+
+.mutli-items .check-label i {
+    border-radius: 0;
+}
+
+.option:checked+i {
+    background-color: #4c8be8;
+    color: #fff;
+    border-color: #4c8be8;
+}
+
+.submit-qabtn {
+    width: 130px;
+    height: 40px;
+    margin: 0 auto;
+    font: 14px "微软雅黑";
+    line-height: 40px;
+    border-radius: 100px;
+    background-color: #4c8be8;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.check-right:checked+i {
+    border-color: #7ed321;
+    background-color: #7ed321;
+    color: #fff;
+}
+
+.check-error:checked+i {
+    border-color: #d61531;
+    background-color: #d61531;
+    color: #fff;
+}
+
+.option.check-forgot+i {
+    border-color: #7ed321;
+    background-color: #fff;
+    color: #7ed321;
+}
+
+.result-zone {
+    margin: 20px -10px 0;
+    border-top: 1px solid #e2e9ff;
+    padding-top: 20px;
+}
+
+.result-desc {
+    margin-top: 10px;
+    padding-left: 10px;
+}
+
+.sucess-result,
+.error-result {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    width: 120px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-radius: 0 100px 100px 0;
+    color: #fff;
+}
+
+.sucess-result {
+    background-color: #70cf00;
+}
+
+.error-result {
+    background-color: #d61531;
+}
+
+.sucess-result .icon,
+.error-result .icon {
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    font-size: 36px;
+}

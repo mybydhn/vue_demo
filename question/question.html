@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扫码学习 ----试题</title>
+    <script src="vue.js"></script>
+    <script src="styles/iconfont.js"></script>
+    <link rel="stylesheet" type="text/css" href="question.css" />
+</head>
+<body>
+    <div class="qa-wrap">
+        <div id="qa" class="qa">
+            <h1>第4课 Photoshop</h1>
+            <div>
+                <div v-for="question in questions" class="each-question">
+                    <h4>{{question.title}}</h4>
+                    <div class="question-righttips">
+                        {{getTypestr(question.type)}}
+                    </div>
+                    <ul v-if="question.type==1" class="single-items">
+                        <li v-for="(choiceitem,index) in question.choiceList">
+                            <div>
+                                <single :question="question" :optionitem="choiceitem" :index="index" :message="choiceitem.text" :qid="'question_'+question.id" :option="getOption(index)"></single>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul v-if="question.type==2" class="mutli-items">
+                        <li v-for="(choiceitem,index) in question.choiceList">
+                            <div>
+                                <mutli :question="question" :optionitem="choiceitem" :index="index" :message="choiceitem.text" :qid="'question_'+question.id" :option="getOption(index)"></mutli>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul v-if="question.type==4" class="mutli-items">
+                        <li v-for="(choiceitem,index) in question.choiceList">
+                            <div>
+                                <mutli :question="question" :optionitem="choiceitem" :index="index" :message="choiceitem.text" :qid="'question_'+question.id" :option="getOption(index)"></mutli>
+                            </div>
+                        </li>
+                    </ul>
+                    <div v-if="question.type==4">
+                        <judge :question="question"></judge>
+                    </div>
+                    <div v-show="issubmit" class="result-zone">
+                        <div class="sucess-result" v-if="question.isright">
+                            答对了！
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-leiappright"></use>
+                            </svg>
+                        </div>
+                        <div class="error-result" v-if="!question.isright">
+                            答错了！
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-leiappwrong"></use>
+                            </svg>
+                        </div>
+                        <div class="result-desc">
+                            正确答案:{{question.correctAnswer|formatAnswer}} <span v-if="!question.isright">您的答案:{{question.selfAns|formatAnswer}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div @click="renderAns" class="submit-qabtn" v-show="!issubmit">提交</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    var qaList = [{
+                "id": 2173016,
+                "title": "111111.0",
+                "type": 1,
+                "correctAnswer": "B",
+                "choiceList": [{
+                    "id": 1817088,
+                    "text": "1"
+                }, {
+                    "id": 1817089,
+                    "text": "2"
+                }, {
+                    "id": 1817090,
+                    "text": "237"
+                }]
+            }, {
+                "id": 2181842,
+                "title": "创业成功，创业者可能获得超出工薪阶层的金钱回报，以及更强大的个人满足感。 ",
+                "type": 4,
+                "correctAnswer": "true",
+                "choiceList": []
+            },
+        {
+            "id": 2153409,
+            "title": "下列说法中正确的有（）",
+            "type": 2,
+            "correctAnswer": "A;B;C;D;E",
+            "choiceList": [{
+                "id": 1777850,
+                "text": "会计是适应生产活动发展的需要而产生的"
+            }, {
+                "id": 1777851,
+                "text": "会计是生产活动发展到一定阶段的产物"
+            }, {
+                "id": 1777852,
+                "text": "会计从产生、发展到现在经历了一个漫长的发展历史"
+            }, {
+                "id": 1777853,
+                "text": "近代会计史将复制簿记著作的出版和会计职业的出现视为两个里程碑"
+            }, {
+                "id": 1777854,
+                "text": "经济越发展，会计越重要"
+            }]
+        }
+    ]
+    </script>
+     <script src="scanqa.js"></script>
+</body>
+
+</html>
